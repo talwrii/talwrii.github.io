@@ -1,0 +1,8 @@
+<html>
+  <head>
+    <title>Bookmarklet to automate report spam bots on twitter/ X</title>
+  </head>
+  <body>
+<a href="javascript:(function()%7Basync%20function%20run()%20%7B%0Afunction%20sleep(ms)%20%7B%0A%20%20%20%20return%20new%20Promise(resolve%20%3D%3E%20setTimeout(resolve%2C%20ms))%3B%0A%7D%0Adocument.evaluate('%2F%2F*%5B%40data-testid%3D%22userActions%22%5D'%2C%20document).iterateNext().click()%20%20%0Aawait%20sleep(1000)%0Adocument.evaluate('%2F%2F*%5B%40role%3D%22menuitem%22%5D%5Bdescendant%3A%3A*%5Bstarts-with(text()%2C%20%22Report%22)%5D%5D'%2C%20document).iterateNext().click()%20%20%0Aawait%20sleep(1000)%0Adocument.evaluate('%2F%2F*%5B%40role%3D%22dialog%22%5D%2Fdescendant%3A%3A*%5Btext()%3D%22Spam%22%5D%2Fancestor%3A%3Alabel%2Fdescendant%3A%3Ainput'%2C%20document).iterateNext().click()%0Aawait%20sleep(1000)%0Adocument.evaluate('%2F%2F*%5B%40role%3D%22dialog%22%5D%2Fdescendant%3A%3A*%5Btext()%3D%22Next%22%5D'%2C%20document).iterateNext().click()%0Aawait%20sleep(1000)%0Adocument.evaluate('%2F%2F*%5B%40role%3D%22dialog%22%5D%2Fdescendant%3A%3A*%5Bstarts-with(text()%2C%20%22Block%22)%5D%2Fancestor%3A%3AButton'%2C%20document).iterateNext().click()%0A%7D%0Arun()%7D)()%3B" > Drag this to bookmarks / right click</a>
+  </body>
+</html>
